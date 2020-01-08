@@ -19,6 +19,16 @@
     </enum>
     <!-- ardupilot specific MAV_CMD_* commands -->
     <enum name="MAV_CMD">
+      <entry value="257" name="MAV_CMD_WAIT_FOR_DROP">
+        <description>Command will wait until drone has dropped a specified value from its max altitude</description>
+        <param index="1">Distance (in meters) that drone needs to drop from its max altitude</param>
+        <param index="2">Empty</param>
+        <param index="3">Empty</param>
+        <param index="4">Empty</param>
+        <param index="5">Empty</param>
+        <param index="6">Empty</param>
+        <param index="7">Empty</param>
+      </entry>
       <entry value="211" name="MAV_CMD_DO_GRIPPER">
         <description>Mission command to operate EPM gripper</description>
         <param index="1">gripper number (a number from 1 to max number of grippers on the vehicle)</param>
