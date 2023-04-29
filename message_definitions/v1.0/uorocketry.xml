@@ -42,7 +42,7 @@
         </message> 
         <message id="2" name="POSTCARD_MESSAGE">
             <description>Postcard serialized message</description>
-            <field type="uint8_t[64]" name="message">Message Payload</field>
+            <field type="uint8_t[255]" name="message">Message Payload</field>
         </message>
     </messages>
 </mavlink>
