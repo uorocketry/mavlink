@@ -3,35 +3,15 @@
     <version>1</version>
     <dialect>4</dialect>
     <enums>
-        <enum name="ROCKET_STATE">
-            <description>Different states of the rocket</description>
-            <entry value="0" name="ROCKET_STATE_UNINIT">
-                <description>Uninitialized system, state is unknown</description>
-            </entry>
-            <entry value="1" name="ROCKET_STATE_INIT">
-                <description>System is intializing up</description>
-            </entry>
-            <entry value="2" name="ROCKET_STATE_RUNNING">
-                <description>System is running</description>
-            </entry>
-        </enum>
-        <enum name="SENDER">
-            <description>Sender of the message</description>
-            <entry value="0" name="GROUND_STATION">
-                <description>Ground Station</description>
-            </entry>
-            <entry value="1" name="MAIN_BOARD">
-                <description>Main Board</description>
-            </entry>
-        </enum>
     </enums>
     <messages>
         <message id="0" name="HEARTBEAT">
             <description>Message encoding the current state of the rocket</description>
-            <field type="uint8_t" name="target_system">System ID</field>
-            <field type="uint64_t" name="timestamp">Timestamp</field>
-            <field type="uint8_t" name="senderType">Vehicle or component type. For a flight controller component the vehicle type This should be used in preference to component id for identifying the component type.</field>
-            <field type="uint8_t" name="state" enum="ROCKET_STATE">State of the rocket</field>
+            <field type="uint8_t" name="type">Vehicle or component type</field>
+            <field type="uint8_t" name="autopilot">	Autopilot type / class.</field>
+            <field type="uint8_t" name="base_mode">System mode bitmap.</field>
+            <field type="uint32_t" name="custom_mode">A bitfield for use for autopilot-specific flags</field>
+            <field type="uint8_t" name="system_status">System status flag.</field>
             <field type="uint8_t_mavlink_version" name="mavlink_version">MAVLink version, not writable by user, gets added by protocol because of magic data type: uint8_t_mavlink_version</field>
         </message>
         <message id="1" name="RADIO_FREQUENCY">
